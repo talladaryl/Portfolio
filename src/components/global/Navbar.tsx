@@ -6,7 +6,7 @@ import {
 } from "react-icons/fa";
 import { IoSearchOutline } from "react-icons/io5";
 import { HiMenuAlt3 } from "react-icons/hi";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <header className="w-full bg-black text-white">
@@ -17,7 +17,7 @@ const Navbar = () => {
             <FaFacebookF />
           </a>
           <span className="text-gray-500">|</span>
-          <a href="#" className="hover:text-green-400 flex items-center">
+          <a href="#"  className="hover:text-green-400 flex items-center">
             <FaTwitter />
           </a>
           <span className="text-gray-500">|</span>
@@ -40,17 +40,17 @@ const Navbar = () => {
           <div className="text-2xl font-bold text-green-400">PORTfolio</div>
           <ul className="hidden md:flex space-x-6">
             <li>
-              <a href="#" className="hover:text-green-400">
+              <a href="/"  className="hover:text-green-400">
                 Home
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-green-400">
+              <a href="/about" className="hover:text-green-400">
                 About
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-green-400">
+              <a href="/service" className="hover:text-green-400">
                 Service
               </a>
             </li>
