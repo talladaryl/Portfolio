@@ -12,10 +12,17 @@ import Services from "./components/global/Services";
 import Contact from "./components/global/Contact";
 import Footer from "./components/global/Footer";
 import Projets from "./components/global/Projets";
+import { useEffect } from "react";
 
 
 function App() {
   const [loading, setLoading] = useState(true);
+
+  // Simulate loading completion after 2 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div
@@ -44,3 +51,5 @@ function App() {
 }
 
 export default App;
+
+
