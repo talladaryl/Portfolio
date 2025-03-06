@@ -3,7 +3,6 @@ import Home from "../components/global/Home";
 import About from "../components/global/About";
 import Portfolios from "../components/global/Portfolios";
 import Services from "../components/global/Services";
-import App from "../App";
 
 const AppRoutes = () => {
   return (

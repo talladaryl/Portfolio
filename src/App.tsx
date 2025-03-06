@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Font1 from "./assets/img/Font1.jpg"; // Importer l'image
 import Load from "./components/global/Load"; // Importer le composant de chargement
 

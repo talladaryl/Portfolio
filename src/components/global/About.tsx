@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { FaPlay, FaDownload, FaArrowUp } from "react-icons/fa";
 
 const About = () => {

@@ -6,7 +6,6 @@ import {
 } from "react-icons/fa";
 import { IoSearchOutline } from "react-icons/io5";
 import { HiMenuAlt3 } from "react-icons/hi";
-import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <header className="w-full bg-black text-white">

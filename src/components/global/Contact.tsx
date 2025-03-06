@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -18,16 +18,22 @@ const Contact = () => {
   const [responseMessage, setResponseMessage] = useState("");
 
   // Gérer la saisie de l'utilisateur
-  const handleChange = (e) => {
+  interface FormData {
+    name: string;
+    email: string;
+    message: string;
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
+    setFormData((prevData: FormData) => ({
       ...prevData,
       [name]: value,
     }));
   };
 
   // Soumettre le formulaire
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -36,33 +42,33 @@ const Contact = () => {
       .sendForm(
         "service_c27gvfl", // Remplacez par votre ID de service EmailJS
         "template_zjawzye", // Remplacez par votre ID de modèle EmailJS pour l'utilisateur
-        e.target, // Utilise le formulaire HTML complet
+        e.target as HTMLFormElement, // Utilise le formulaire HTML complet
         "o-NB_4irLNskCG7oX" // Remplacez par votre Public Key d'EmailJS
       )
       .then(
-        (result) => {
+        () => {
           // Envoyer un email pour vous (message de l'utilisateur)
           emailjs
             .sendForm(
               "service_c27gvfl", // Remplacez par votre ID de service EmailJS
               "template_zlrpuxr", // Remplacez par l'ID du modèle pour l'admin
-              e.target, // Utilise le formulaire HTML complet
+              e.target as HTMLFormElement, // Utilise le formulaire HTML complet
               "o-NB_4irLNskCG7oX" // Remplacez par votre Public Key d'EmailJS
             )
             .then(
-              (result) => {
+              () => {
                 setResponseMessage("Message envoyé avec succès !");
                 setIsSubmitting(false);
                 setFormData({ name: "", email: "", message: "" });
               },
               (error) => {
-                setResponseMessage("Erreur lors de l'envoi du message.");
+                setResponseMessage("Erreur lors de l'envoi du message. " + error.text);
                 setIsSubmitting(false);
               }
             );
         },
         (error) => {
-          setResponseMessage("Erreur lors de l'envoi du message.");
+          setResponseMessage("Erreur lors de l'envoi du message. " + error.text);
           setIsSubmitting(false);
         }
       );
@@ -140,7 +146,7 @@ const Contact = () => {
                 placeholder="Message"
                 onChange={handleChange}
                 className="w-full p-3 mb-6 border rounded-lg bg-gray-800 text-white border-gray-600 focus:outline-none focus:ring focus:border-green-500"
-                rows="4"
+                rows={4}
               ></textarea>
 
               <button
