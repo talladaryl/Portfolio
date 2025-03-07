@@ -50,7 +50,10 @@ const Navbar = () => {
             <FaFacebookF />
           </a>
           <span className="text-gray-500">|</span>
-          <a href="#" className="hover:text-green-700 flex items-center">
+          <a
+            href="https://twitter.com/DarylT.A.D"
+            className="hover:text-green-700 flex items-center"
+          >
             <FaTwitter />
           </a>
           <span className="text-gray-500">|</span>

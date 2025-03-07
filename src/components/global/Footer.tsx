@@ -15,7 +15,7 @@ const Footer = () => {
         {/* Logos des réseaux sociaux avec React Icons */}
         <div className="flex justify-center mb-8">
           <a
-            href="https://wa.me/votre-numero"
+            href="https:/wa.me/658940985?text=bonjour,%20je%20souhaite%20avoir%20plus%20d'informations"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -25,7 +25,7 @@ const Footer = () => {
             />
           </a>
           <a
-            href="https://www.facebook.com/votre-page"
+            href="https://www.facebook.com/darylarsen"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -35,7 +35,7 @@ const Footer = () => {
             />
           </a>
           <a
-            href="https://twitter.com/votre-compte"
+            href="https://twitter.com/DarylT.A.D"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -55,7 +55,7 @@ const Footer = () => {
             />
           </a>
           <a
-            href="https://www.instagram.com/votre-compte"
+            href="https://www.instagram.com/Darylarsen"
             target="_blank"
             rel="noopener noreferrer"
           >
