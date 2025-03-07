@@ -28,10 +28,10 @@ const Testimonial = () => {
           </div>
           <div className="flex">
             <button className="bg-gray-800 hover:bg-gray-700 text-white px-3 py-2 rounded-l-md">
-              ←
+              
             </button>
             <button className="bg-gray-800 hover:bg-gray-700 text-white px-3 py-2 rounded-r-md">
-              →
+              
             </button>
           </div>
         </div>
@@ -54,23 +54,20 @@ const Testimonial = () => {
                 "
               </span>
               <p className="pl-6 text-lg">
-                <strong>SolutionTech</strong> est un prestataire de services
+                <strong>Daryl.SolutionTech</strong> est un prestataire de services
                 exceptionnel et ultra-professionnel, qui a apporté de nouvelles
                 technologies, une nouvelle méthodologie et une perspective
                 innovante à notre projet.
               </p>
             </div>
             <p className="mt-4">
-              M. Charles, entrepreneur Yaoundé, TKC, Cameroun
+              Mme MOUDI, entrepreneur Yaoundé, Cameroun
             </p>
           </div>
         </div>
       </div>
 
-      {/* Bouton Flottant (flèche vers le haut) */}
-      <button className="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition">
-        <FaArrowUp />
-      </button>
+      
     </div>
   );
 };

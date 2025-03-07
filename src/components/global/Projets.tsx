@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaArrowUp, FaTimes } from "react-icons/fa";
 import Image1 from "../../assets/img/DP.jpg";
 import Image2 from "../../assets/img/abut.jpg";
-import Image3 from "../../assets/img/acceuil.jpg";
+import Image3 from "../../assets/img/abut.jpg";
 
 const projects = [
   {

@@ -16,11 +16,6 @@ const experiences = [
     description: "Création de solution informatique inovante",
   },
   {
-    year: "2023 - 2024 (WEB DEVELOPER)",
-    company: "FREELANCE",
-    description: "Création de solution informatique inovante",
-  },
-  {
     year: "2024 - 2025 (WEB DEVELOPER AND ANALYST)",
     company: "SHALOM TECHNOLOGIE",
     description: "Création de solution informatique inovante",
@@ -58,7 +53,9 @@ const Portfolio = () => {
       </div>
 
       {/* Liste des expériences */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+        {" "}
+        {/* Changement ici */}
         {experiences.map((exp, index) => (
           <div
             key={index}
@@ -76,10 +73,7 @@ const Portfolio = () => {
         ))}
       </div>
 
-      {/* Bouton Flottant (flèche vers le haut) */}
-      <button className="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition">
-        <FaArrowUp />
-      </button>
+    
     </section>
   );
 };

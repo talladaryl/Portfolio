@@ -61,6 +61,7 @@ const Navbar = () => {
           <a href="#" className="hover:text-green-700 flex items-center">
             <FaInstagram />
           </a>
+          <span className="text-gray-500">|</span>
           <a
             href="https:/wa.me/658940985?text=bonjour,%20je%20souhaite%20avoir%20plus%20d'informations"
             className="hover:text-green-700 flex items-center"
