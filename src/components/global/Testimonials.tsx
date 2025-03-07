@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaArrowUp } from "react-icons/fa";
+import Image1 from "../../assets/img/dr0.jpg"; // Import correct
 
 const Testimonial = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+  }, []);
+
   return (
-    <div className="bg-black text-white py-16 px-4 md:px-16 relative">
+    <div
+      className={`bg-black text-white py-16 px-4 md:px-16 relative transition-all duration-1000 ${
+        isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       <div className="container mx-auto">
         {/* Titre et sous-titre */}
         <div className="flex justify-between items-center mb-10">
@@ -28,7 +41,7 @@ const Testimonial = () => {
           {/* Image de profil */}
           <div className="w-32 h-32 rounded-full overflow-hidden mr-8 mb-4 md:mb-0">
             <img
-              src="votre-image-de-profil.jpg" // Remplacez par votre image de profil
+              src={Image1}
               alt="Profil"
               className="w-full h-full object-cover"
             />
@@ -48,7 +61,6 @@ const Testimonial = () => {
               </p>
             </div>
             <p className="mt-4">
-              {" "}
               M. Charles, entrepreneur Yaoundé, TKC, Cameroun
             </p>
           </div>

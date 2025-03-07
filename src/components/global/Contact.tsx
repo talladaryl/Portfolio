@@ -34,20 +34,20 @@ const Contact = () => {
     // Envoyer un email pour l'utilisateur (confirmation)
     emailjs
       .sendForm(
-        "service_c27gvfl", // Remplacez par votre ID de service EmailJS
-        "template_zjawzye", // Remplacez par votre ID de modèle EmailJS pour l'utilisateur
-        e.target, // Utilise le formulaire HTML complet
-        "o-NB_4irLNskCG7oX" // Remplacez par votre Public Key d'EmailJS
+        "service_c27gvfl", 
+        "template_zjawzye", 
+        e.target, 
+        "o-NB_4irLNskCG7oX" 
       )
       .then(
         (result) => {
-          // Envoyer un email pour vous (message de l'utilisateur)
+          
           emailjs
             .sendForm(
-              "service_c27gvfl", // Remplacez par votre ID de service EmailJS
-              "template_zlrpuxr", // Remplacez par l'ID du modèle pour l'admin
-              e.target, // Utilise le formulaire HTML complet
-              "o-NB_4irLNskCG7oX" // Remplacez par votre Public Key d'EmailJS
+              "service_c27gvfl", 
+              "template_zlrpuxr", 
+              e.target, 
+              "o-NB_4irLNskCG7oX" 
             )
             .then(
               (result) => {
@@ -113,9 +113,9 @@ const Contact = () => {
               CONTACTEZ-NOUS
             </h2>
             <h3 className="text-lg font-semibold text-green-500 mb-4">
-              DÉCOUVREZ LES FONCTIONNALITÉS
+             LAISSEZ NOUS UN EMAIL
             </h3>
-            <h3 className="text-3xl font-bold mb-6">OBTENEZ EN UN CLIC</h3>
+            <h3 className="text-3xl font-bold mb-6">EN UN CLIC</h3>
 
             <form onSubmit={handleSubmit}>
               <input

@@ -75,10 +75,7 @@ const Footer = () => {
             CAREER
           </a>
           <a href="#" className="mx-4 hover:text-green-500">
-            BLOG
-          </a>
-          <a href="#" className="mx-4 hover:text-green-500">
-            GALLERY
+            SERVICES
           </a>
           <a href="#" className="mx-4 hover:text-green-500">
             CONTACT ME

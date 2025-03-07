@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaArrowUp } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // Liste des expériences
 const experiences = [
@@ -11,26 +13,35 @@ const experiences = [
   {
     year: "2022 - 2023 (WEB DEVELOPER)",
     company: "FREELANCE",
-    description:
-      "Création de solution informatique inovante",
+    description: "Création de solution informatique inovante",
   },
   {
     year: "2023 - 2024 (WEB DEVELOPER)",
     company: "FREELANCE",
-    description:
-      "Création de solution informatique inovante",
+    description: "Création de solution informatique inovante",
   },
   {
     year: "2024 - 2025 (WEB DEVELOPER AND ANALYST)",
     company: "SHALOM TECHNOLOGIE",
-    description:
-      "Création de solution informatique inovante",
+    description: "Création de solution informatique inovante",
   },
 ];
 
 const Portfolio = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
-    <section className="bg-black text-white py-16 px-4 md:px-16">
+    <section
+      className="bg-black text-white py-16 px-4 md:px-16"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
       {/* Titre & Description */}
       <div className="flex flex-col md:flex-row justify-between items-center md:items-start">
         <div>
@@ -49,7 +60,13 @@ const Portfolio = () => {
       {/* Liste des expériences */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
         {experiences.map((exp, index) => (
-          <div key={index} className="bg-gray-900 p-6 rounded-lg shadow-lg">
+          <div
+            key={index}
+            className="bg-gray-900 p-6 rounded-lg shadow-lg"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-once="true"
+          >
             <p className="text-gray-400 text-sm">{exp.year}</p>
             <h3 className="text-green-500 font-bold text-lg mt-2">
               {exp.company}
@@ -69,18 +86,36 @@ const Portfolio = () => {
 
 const WhatWeDo = () => {
   const skills = [
-    { label: "BRANDING DESIGN", percentage: 60 },
-    { label: "UI & UX DESIGN", percentage: 70 },
+    { label: "PROGRAMMATION FULL-STACK", percentage: 60 },
+    { label: "GRAPHISME", percentage: 20 },
     { label: "WEB DESIGN", percentage: 30 },
-    { label: "ILLUSTRATION", percentage: 90 },
+    { label: "ILLUSTRATION", percentage: 40 },
   ];
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
-    <section className="bg-black text-white py-16 px-4 md:px-16">
+    <section
+      className="bg-black text-white py-16 px-4 md:px-16"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
       {/* Conteneur des cercles de pourcentage */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {skills.map((skill, index) => (
-          <div key={index} className="text-center">
+          <div
+            key={index}
+            className="text-center"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-once="true"
+          >
             <div className="relative flex items-center justify-center w-40 h-40 md:w-56 md:h-56 mx-auto">
               <svg className="w-full h-full">
                 <circle

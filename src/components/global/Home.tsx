@@ -1,33 +1,35 @@
 import React, { useState, useEffect } from "react";
-import Image1 from "../../assets/img/S1.jpeg"; // Import correct
-import Image2 from "../../assets/img/DA1.jpeg"; // Import correct
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import des styles AOS
+import Image1 from "../../assets/img/S1.jpeg";
+import Image2 from "../../assets/img/DA1.jpeg";
 
 const Home = () => {
   const [isFirstPage, setIsFirstPage] = useState(true);
-  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Changement d'image toutes les 5 secondes
+    AOS.init({
+      duration: 1000, // Durée de l'animation
+      once: true, // L'animation ne se déclenche qu'une seule fois
+    });
+
+    // Changement d'image toutes les 10 secondes
     const intervalId = setInterval(() => {
       setIsFirstPage((prev) => !prev);
-    }, 5000);
+    }, 10000);
 
     // Cleanup interval on component unmount
     return () => clearInterval(intervalId);
-  }, []);
-
-  useEffect(() => {
-    // Ajouter l'animation de chute une fois la page chargée
-    setIsLoaded(true);
   }, []);
 
   return (
     <section className="text-white min-h-screen flex items-center px-6 md:px-12">
       <div className="w-full grid md:grid-cols-2 gap-6">
         <div
-          className={`flex flex-col justify-center transition-transform duration-1000 ${
-            isLoaded ? "transform translate-y-0" : "transform translate-y-10"
-          }`}
+          className="flex flex-col justify-center"
+          data-aos="fade-up" // Animation AOS
+          data-aos-duration="1000" // Durée de l'animation AOS
+          data-aos-once="true" // Animation AOS une seule fois
         >
           <h1 className="text-5xl font-bold uppercase">
             <span className="text-green-400">
@@ -42,19 +44,21 @@ const Home = () => {
               ? "Seul, on va plus vite. Ensemble, on va plus loin. À l'ère du numérique, cette maxime n'a jamais été aussi vraie."
               : "Le progrès ne s'arrête jamais. Ensemble, explorons de nouvelles opportunités pour bâtir un monde meilleur."}
           </p>
-          <button className="mt-6 bg-green-500 text-black px-4 py-2 rounded-md hover:bg-green-400 transition-colors duration-300">
+          <button className="mt-6 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-black-100 transition-colors duration-300">
             Démarrer <span aria-hidden="true">→</span>
           </button>
         </div>
 
-        {/* Image qui change dynamiquement avec l'animation */}
-        <div className="relative flex justify-center">
+        <div
+          className="relative flex justify-center ml-0"
+          data-aos="fade-up" // Animation AOS
+          data-aos-duration="1000" // Durée de l'animation AOS
+          data-aos-once="true" // Animation AOS une seule fois
+        >
           <img
             src={isFirstPage ? Image1 : Image2}
             alt="Person"
-            className={`rounded-lg w-full max-w-md transition-all duration-1000 ease-in-out transform ${
-              isLoaded ? "translate-y-0" : "translate-y-10"
-            }`}
+            className="rounded-lg w-full max-w-md transition-all duration-1000 ease-in-out transform"
           />
 
           {/* Numéros flottants pour changer d'image */}

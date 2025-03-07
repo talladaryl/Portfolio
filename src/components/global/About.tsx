@@ -1,11 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaPlay, FaDownload, FaArrowUp } from "react-icons/fa";
+import Image1 from "../../assets/img/S1.jpeg";
 
 const About = () => {
   const [playVideo, setPlayVideo] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+  }, []);
 
   return (
-    <section className="bg-black text-white py-16 px-4 md:px-16 flex flex-col md:flex-row items-center justify-center">
+    <section
+      className={`bg-black text-white py-16 px-4 md:px-16 flex flex-col md:flex-row items-center justify-center transition-all duration-1000 ${
+        isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       {/* Image avec bouton Play */}
       <div className="relative rounded-lg shadow-md overflow-hidden w-full md:w-1/2">
         {!playVideo ? (
@@ -18,15 +30,14 @@ const About = () => {
             </button>
           </div>
         ) : (
-          <iframe
-            title="Video"
-            className="w-full h-full"
-            style={{ minHeight: "100%", height: "100%" }}
-            src="https://www.bing.com/videos/riverview/relatedvideo?q=video+developement+de+solution+informatique&&mid=DDB1FFBDF5C0329770CBDDB1FFBDF5C0329770CB&&mmscn=stvo&FORM=VRDGAR" // Exemple de vidéo YouTube
-            allow="autoplay"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
+          <img
+            src={Image1}
+            alt="Person"
+            className={`rounded-lg w-full max-w-md transition-all duration-1000 ease-in-out transform ${
+              isLoaded
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
           />
         )}
       </div>
@@ -39,7 +50,7 @@ const About = () => {
         </h2>
         <p className="mt-4 text-gray-300">
           Consacrez plus de temps à vous concentrer sur les aspects importants
-          de votre entreprise. Tournez-vous vers <strong>SolutionTECH</strong> ,
+          de votre entreprise. Tournez-vous vers <strong>SolutionTECH</strong>,
           pour des solutions informatiques personnalisées et efficaces. En tant
           qu'entreprise spécialisée, nous créons des systèmes en ligne qui
           peuvent être adaptés en fonction des besoins spécifiques de votre
