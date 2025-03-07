@@ -1,5 +1,3 @@
-import React from "react";
-
 const WhatWeDo = () => {
   return (
     <section className="bg-black text-white py-16 px-4 md:px-16">

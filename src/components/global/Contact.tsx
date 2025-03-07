@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
@@ -18,16 +18,22 @@ const Contact = () => {
   const [responseMessage, setResponseMessage] = useState("");
 
   // Gérer la saisie de l'utilisateur
-  const handleChange = (e) => {
+  interface FormData {
+    name: string;
+    email: string;
+    message: string;
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
+    setFormData((prevData: FormData) => ({
       ...prevData,
       [name]: value,
     }));
   };
 
   // Soumettre le formulaire
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -50,19 +56,19 @@ const Contact = () => {
               "o-NB_4irLNskCG7oX" 
             )
             .then(
-              (result) => {
+              () => {
                 setResponseMessage("Message envoyé avec succès !");
                 setIsSubmitting(false);
                 setFormData({ name: "", email: "", message: "" });
               },
               (error) => {
-                setResponseMessage("Erreur lors de l'envoi du message.");
+                setResponseMessage("Erreur lors de l'envoi du message. " + error.text);
                 setIsSubmitting(false);
               }
             );
         },
         (error) => {
-          setResponseMessage("Erreur lors de l'envoi du message.");
+          setResponseMessage("Erreur lors de l'envoi du message. " + error.text);
           setIsSubmitting(false);
         }
       );
@@ -140,7 +146,7 @@ const Contact = () => {
                 placeholder="Message"
                 onChange={handleChange}
                 className="w-full p-3 mb-6 border rounded-lg bg-gray-800 text-white border-gray-600 focus:outline-none focus:ring focus:border-green-500"
-                rows="4"
+                rows={4}
               ></textarea>
 
               <button

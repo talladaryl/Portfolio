@@ -8,7 +8,6 @@ import {
 } from "react-icons/fa";
 import { IoSearchOutline } from "react-icons/io5";
 import { HiMenuAlt3 } from "react-icons/hi";
-
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const [hoveredMenu, setHoveredMenu] = useState(null);
@@ -83,30 +82,31 @@ const Navbar = () => {
         <div className="flex justify-between items-center px-6 py-4">
           <div className="text-2xl font-bold text-green-400">Daryl.Tech</div>
           <ul className="hidden md:flex space-x-6">
-            {["Home", "About", "Service", "Portfolio", "Career"].map(
-              (menu, index) => (
-                <li
-                  key={index}
-                  onClick={() => handleMenuClick(menu)}
-                  onMouseEnter={() => handleMouseEnter(menu)}
-                  onMouseLeave={handleMouseLeave}
-                  style={menuStyle(menu)}
-                  className="relative cursor-pointer"
-                >
-                  <a href="#" className="hover:text-green-400">
-                    {menu}
-                  </a>
-                  {(activeMenu === menu || hoveredMenu === menu) && (
-                    <div
-                      className="absolute bottom-0 left-0 w-full h-1 bg-green-400 transition-all duration-300"
-                      style={{
-                        width: "100%",
-                      }}
-                    ></div>
-                  )}
-                </li>
-              )
-            )}
+            <li>
+              <a href="#" className="hover:text-green-400">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-green-400">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-green-400">
+                Service
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-green-400">
+                Portfolio
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-green-400">
+                Pages
+              </a>
+            </li>
           </ul>
           <div className="flex items-center space-x-4">
             <IoSearchOutline className="text-xl cursor-pointer hover:text-green-400" />
