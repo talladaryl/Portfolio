@@ -42,17 +42,17 @@ const Contact = () => {
       .sendForm(
         "service_c27gvfl", 
         "template_zjawzye", 
-        e.target, 
+        e.target as HTMLFormElement, 
         "o-NB_4irLNskCG7oX" 
       )
       .then(
-        (result) => {
+        () => {
           
           emailjs
             .sendForm(
               "service_c27gvfl", 
               "template_zlrpuxr", 
-              e.target, 
+              e.target as HTMLFormElement, 
               "o-NB_4irLNskCG7oX" 
             )
             .then(

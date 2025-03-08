@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { FaPlay, FaDownload, FaArrowUp } from "react-icons/fa";
+import  { useState, useEffect } from "react";
+import { FaPlay, FaDownload } from "react-icons/fa";
 import Image1 from "../../assets/img/S1.jpeg";
 
 const About = () => {

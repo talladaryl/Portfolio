@@ -1,3 +1,4 @@
+import { CSSProperties } from "react";
 import { useState } from "react";
 import {
   FaFacebookF,
@@ -13,11 +14,11 @@ const Navbar = () => {
   const [hoveredMenu, setHoveredMenu] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const handleMenuClick = (menu) => {
+  const handleMenuClick = (menu:any) => {
     setActiveMenu(menu);
   };
 
-  const handleMouseEnter = (menu) => {
+  const handleMouseEnter = (menu:any) => {
     setHoveredMenu(menu);
   };
 
@@ -29,7 +30,8 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const menuStyle = (menu) => {
+  
+  const menuStyle = (menu: string): CSSProperties => {
     return {
       position: "relative",
       textDecoration: "none",
@@ -49,14 +51,10 @@ const Navbar = () => {
             <FaFacebookF />
           </a>
           <span className="text-gray-500">|</span>
-<<<<<<< HEAD
           <a
             href="https://twitter.com/DarylT.A.D"
             className="hover:text-green-700 flex items-center"
           >
-=======
-          <a href="#"  className="hover:text-green-400 flex items-center">
->>>>>>> aa4f5d16b6f124944da1514b882fc08a329b384d
             <FaTwitter />
           </a>
           <span className="text-gray-500">|</span>
@@ -86,7 +84,6 @@ const Navbar = () => {
         <div className="flex justify-between items-center px-6 py-4">
           <div className="text-2xl font-bold text-green-400">Daryl.Tech</div>
           <ul className="hidden md:flex space-x-6">
-<<<<<<< HEAD
             {["Home", "About", "Service", "Portfolio", "Career"].map(
               (menu, index) => (
                 <li
@@ -111,33 +108,6 @@ const Navbar = () => {
                 </li>
               )
             )}
-=======
-            <li>
-              <a href="/"  className="hover:text-green-400">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="/about" className="hover:text-green-400">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="/service" className="hover:text-green-400">
-                Service
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-green-400">
-                Portfolio
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-green-400">
-                Pages
-              </a>
-            </li>
->>>>>>> aa4f5d16b6f124944da1514b882fc08a329b384d
           </ul>
           <div className="flex items-center space-x-4">
             <IoSearchOutline className="text-xl cursor-pointer hover:text-green-400" />
